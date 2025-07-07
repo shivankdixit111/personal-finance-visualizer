@@ -30,6 +30,7 @@ A full-stack web application to track and visualize your personal financial tran
 
 ## 📁 Project Structure
 
+```bash
 src/
 │
 ├── app/                     # Next.js App Router pages
