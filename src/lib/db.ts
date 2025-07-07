@@ -18,6 +18,7 @@ export const connectToDB = async()=>{
        }
        return cached.connection;
     } catch(error) {
+      console.log(error)
       console.log('Failed to connect to DB')
     }
 }

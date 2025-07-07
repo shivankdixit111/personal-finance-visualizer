@@ -11,6 +11,7 @@ export async function DELETE(req: NextRequest, { params }: { params: {id: string
         await Transaction.findByIdAndDelete(id);
         return NextResponse.json({message: "Transaction deleted succssfully"}, {status: 200})
     } catch(error) {
+        console.log(error)
         return NextResponse.json({message: "Server error"}, {status: 400})
     }
 }
@@ -29,6 +30,7 @@ export async function PATCH(req: NextRequest, {params}: {params: {id: string}}) 
       await Transaction.findByIdAndUpdate(id, {amount, date, description, category})
       return NextResponse.json({message: "Transaction updated successfully"} ,{status: 200});
     } catch(error: any) {   
+        console.log(error)
         return NextResponse.json({message: error.message}, {status: 400})
     }
 }
@@ -40,6 +42,7 @@ export async function GET(req: NextRequest, { params }: { params: {id: string} }
         const transaction = await Transaction.findById(id);
         return NextResponse.json(transaction, {status: 200})
     } catch(error) {
+        console.log(error)
         return NextResponse.json({message: "Server error"}, {status: 400})
     }
 }
