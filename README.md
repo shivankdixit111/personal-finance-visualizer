@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💸 Personal Finance Visualizer
 
-## Getting Started
+A full-stack web application to track and visualize your personal financial transactions year-wise. Easily monitor your expenses, see category-wise breakdowns, and stay in control of your money.
 
-First, run the development server:
+## 📊 Features
 
-```bash
+- ✅ Add, view, and manage transactions
+- 📅 Year-wise filtering of data
+- 📌 Predefined categories for consistency
+- 🧠 Dashboard showing:
+  - Total expenses
+  - Top spending category
+  - Total transactions
+  - Category-wise Pie Chart
+  - 5 Most Recent Transactions
+- ⚡ Fast, clean UI with modern design
+
+
+## 🛠️ Tech Stack
+
+| Layer           | Tech                                                 |
+|-----------------|------------------------------------------------------|
+| Frontend        | **Next.js (App Router), TypeScript, Tailwind CSS**   |
+| Backend         | **Node.js, API Routes, MongoDB, Mongoose**           |
+| Charts          | **Recharts**                                         |
+| UI Components   | **shadcn/ui**                                        |
+| Auth (optional) | **Clerk**                                            |
+| State Mgmt      | **Context API**                                      |
+
+
+## 📁 Project Structure
+
+src/
+│
+├── app/ # Next.js App Router Pages
+│   |
+│   └──api/ # All backend route handlers (API endpoints)
+│   |
+│   └── /Dashboard → Main Dashboard page
+│        /Transactions → View and manage transactions
+│        /Expense → Monthly expenses visualization
+|
+│
+├── components/ # Reusable UI components
+│ └── ui/ # Shadcn-based UI elements
+│
+├── context/ # TransactionContext for global state
+│
+├── lib/ # Database connection logic
+│
+├── models/ # Mongoose Models (Transaction)
+│
+└── styles/ # Global CSS
+
+
+
+## 🧪 Setup Locally
+
+### 1️⃣ Clone the repo
+
+git clone https://github.com/your-username/personal-finance-visualizer.git
+cd personal-finance-visualizer
+
+
+## Install dependencies 
+
+npm install
+
+
+## Add Environment Variables
+Create a .env.local file in the root and include:
+
+DB_URI=mongodb+srv://dshivank630:xHmJPMQ3wF0qgsNv@cluster0.hgxaeec.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ 
+
+## Run the development server 
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be running at: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Learnings & Goals
+Practiced full-stack architecture with Next.js App Router
 
-## Learn More
+Implemented MongoDB aggregation for dashboard analytics
 
-To learn more about Next.js, take a look at the following resources:
+Used Recharts to display financial data visually
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Prioritized component reusability and clean UI with Tailwind + shadcn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Author
+Shivank Dixit
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💼 LinkedIn
+
+🚀 GitHub
+

@@ -7,23 +7,61 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'  
 import { categories } from '@/constants/category'
 import { SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, Select } from '@/components/ui/select'  
-import React, { useState } from 'react' 
+import React, { InputEvent, useEffect, useState } from 'react' 
+import { useParams, useRouter } from 'next/navigation'
+import { useTransactionData } from '@/context/TransactionContext'
+
+
+type transactionType =  {
+    _id: string,
+    amount: number,
+    category: string,
+    date: string,
+    description: string, 
+}
 
 const page = () => {
+  const router = useRouter();
+  const { id } = useParams(); 
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const { setLoading, loading, setRefreshTransaction } = useTransactionData();
+
+
+  useEffect(()=> {
+    async function getData() {
+        try {
+            const response = await fetch(`/api/Transaction/${id}`, {
+                method: "GET"
+            })
+            const data: transactionType = await response.json();
+            if(response.ok) {
+                setAmount(data.amount);
+                setDate(new Date(data.date))
+                setDescription(data.description)
+                setCategory(data.category)
+            }
+        } catch(error) {
+           console.log(error)
+        }
+    }
+    getData();
+  },[])
+
   const handleSubmit = async(e: React.FormEvent)=> {
     e.preventDefault();
+     console.log('form is ', `/api/Transaction/${id}`)
     const body = {
       amount,
       date,
       description,
       category,
     } 
-    const response = await fetch('api/Transaction', {
-      method: "POST",
+    setLoading(true)
+    const response = await fetch(`/api/Transaction/${id}`, {
+      method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
       },
@@ -31,19 +69,18 @@ const page = () => {
     })
     const data = await response.json();
     if(response.ok) {
-      alert("Transaction added successfully")
+      alert("Transaction updated successfully")
     } else {
       alert(data.message)
-    }
-    setAmount(undefined);
-    setDescription("")
-    setDate(undefined)
+    } 
+    setRefreshTransaction(prev=> !prev)
+    router.replace('/Transactions')
   }
 
   return (  
     <div className='flex justify-center min-h-screen bg-muted px-4'> 
         <form onSubmit={handleSubmit} className='w-full h-[60%] mt-15 max-w-md bg-white p-6 rounded-xl shadow-lg space-y-5'>
-            <h2 className='text-2xl font-semibold text-center text-primary'>Add Transaction</h2>
+            <h2 className='text-2xl font-semibold text-center text-primary'>Edit Transaction</h2>
             <div className='space-y-2'>
               <Label htmlFor='amount'>Transaction Amount</Label>
               <Input 
@@ -70,7 +107,7 @@ const page = () => {
             </div>
             <div className='space-y-2'>
               <Label htmlFor='category'>Category</Label>
-               <Select onValueChange={(value)=> setCategory(value)}>
+               <Select onValueChange={(value)=> setCategory(value)} value={category}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select Category" />
                   </SelectTrigger>
@@ -86,7 +123,7 @@ const page = () => {
                   </SelectContent>
                 </Select> 
             </div>
-          <Button className='mt-4 w-full'>Submit</Button>
+          <Button className='mt-4 w-full'>Save</Button>
         </form>
     </div>
   )
