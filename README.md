@@ -53,8 +53,7 @@ src/
 │
 └── styles/                 # Global styles (TailwindCSS)
     └── globals.css
-
-
+```
 
 
 ## 🧪 Setup Locally
@@ -64,20 +63,21 @@ src/
 ```bash
 git clone https://github.com/your-username/personal-finance-visualizer.git
 cd personal-finance-visualizer
+```
 
 
 ## Install dependencies 
 
 ```bash
 npm install
-
+```
 
 ## Add Environment Variables
 Create a .env.local file in the root and include:
 
 ```bash
 DB_URI=mongodb+srv://dshivank630:xHmJPMQ3wF0qgsNv@cluster0.hgxaeec.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
- 
+```
 
 ## Run the development server 
 
