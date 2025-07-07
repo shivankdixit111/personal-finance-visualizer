@@ -32,25 +32,27 @@ A full-stack web application to track and visualize your personal financial tran
 
 src/
 │
-├── app/ # Next.js App Router Pages
-│   |
-│   └──api/ # All backend route handlers (API endpoints)
-│   |
-│   └── /Dashboard → Main Dashboard page
-│        /Transactions → View and manage transactions
-│        /Expense → Monthly expenses visualization
-|
+├── app/                     # Next.js App Router pages
+│   ├── api/                # Backend API route handlers
+│   ├── Dashboard/          # Dashboard page
+│   ├── Transactions/       # View and manage transactions
+│   └── Expense/            # Monthly expenses visualization
 │
-├── components/ # Reusable UI components
-│ └── ui/ # Shadcn-based UI elements
+├── components/             # Reusable UI components
+│   └── ui/                 # shadcn-based UI elements
 │
-├── context/ # TransactionContext for global state
+├── context/                # TransactionContext for global state
 │
-├── lib/ # Database connection logic
+├── lib/                    # Utility functions and configs
+│   ├── db.ts               # MongoDB connection setup
+│   └── validations/        # Zod validation schemas
 │
-├── models/ # Mongoose Models (Transaction)
+├── models/                 # Mongoose models
+│   └── transaction.model.ts
 │
-└── styles/ # Global CSS
+└── styles/                 # Global styles (TailwindCSS)
+    └── globals.css
+
 
 
 
