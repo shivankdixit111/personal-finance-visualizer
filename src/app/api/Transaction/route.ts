@@ -1,5 +1,5 @@
 import { connectToDB } from "@/lib/db";
-import { transactionSchema, validateTransaction } from "@/lib/validations/Transaction";
+import { validateTransaction } from "@/lib/validations/Transaction";
 import { Transaction } from "@/models/transaction.model";
 import { NextRequest, NextResponse } from "next/server";
 

@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'  
 import { categories } from '@/constants/category'
 import { SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, Select } from '@/components/ui/select'  
-import React, { InputEvent, useEffect, useState } from 'react' 
+import React, { useEffect, useState } from 'react' 
 import { useParams, useRouter } from 'next/navigation'
 import { useTransactionData } from '@/context/TransactionContext'
 
