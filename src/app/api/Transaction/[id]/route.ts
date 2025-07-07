@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 
-export async function DELETE(req: NextRequest, { params } : {params: { id: string }}) {
+export async function DELETE(req: NextRequest, { params } : any) {
     try { 
         const { id } = params; 
         
