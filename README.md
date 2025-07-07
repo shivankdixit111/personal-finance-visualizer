@@ -72,6 +72,7 @@ cd personal-finance-visualizer
 npm install
 ```
 
+
 ## Add Environment Variables
 Create a .env.local file in the root and include:
 
@@ -87,18 +88,25 @@ npm run dev
 
 App will be running at: http://localhost:3000
 
+
+
 ## 🧠 Learnings & Goals
-Practiced full-stack architecture with Next.js App Router
+✅ Practiced full-stack architecture with Next.js App Router
 
-Implemented MongoDB aggregation for dashboard analytics
+📊 Implemented MongoDB aggregation for powerful dashboard analytics
 
-Used Recharts to display financial data visually
+📈 Used Recharts to visually represent financial data
 
-Prioritized component reusability and clean UI with Tailwind + shadcn
+🎨 Focused on reusable components and crafted a clean UI using Tailwind CSS + shadcn/ui
+
+💡 Gained deeper understanding of API routes, global state, and data filtering by year
+
 
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+
 
 ## ✨ Author
 Shivank Dixit
