@@ -27,7 +27,7 @@ const Page = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const { setLoading, loading, setRefreshTransaction } = useTransactionData();
+  const { setLoading, setRefreshTransaction } = useTransactionData();
 
 
   useEffect(()=> {

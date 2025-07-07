@@ -43,6 +43,7 @@ export async function POST(req: NextRequest) {
       const newTransaction = await Transaction.create({amount, date, description, category})
       return NextResponse.json(newTransaction, {status: 200})
     } catch(error: any) {   
+        console.log(error)
         return NextResponse.json({message: error.message}, {status: 400})
     }
 }

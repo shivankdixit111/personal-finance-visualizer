@@ -8,7 +8,7 @@ declare global {
     } | undefined
 } 
 
-let cached = global.Mongoose || {connection: null, promise: null}
+const cached = global.Mongoose || {connection: null, promise: null}
 
 export const connectToDB = async()=>{
     try {

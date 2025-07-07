@@ -32,7 +32,7 @@ export default function TransactionListDemo() {
   }
 
   function getButtonDisplayed() {
-      let buttons: Array<string | number> = []
+      const buttons: Array<string | number> = []
 
       if(totalPages<=5) {
         for(let i=1;i<=Math.min(totalPages, 5);i++) buttons.push(i);
@@ -98,7 +98,7 @@ export default function TransactionListDemo() {
             {
                 getButtonDisplayed().map((b, idx)=> (
                     b==="..." ? 
-                    (<span>...</span>)
+                    (<span key={idx}>...</span>)
                     : 
                     (
                         <button  className={`h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 ${page==b ? "bg-gray-600" : ""}`} key={idx} onClick={()=> setPage(Number(b))}>

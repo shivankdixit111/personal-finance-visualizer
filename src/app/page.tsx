@@ -9,7 +9,7 @@ import { categories } from '@/constants/category'
 import { SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, Select } from '@/components/ui/select'  
 import React, { useState } from 'react' 
 
-const page = () => {
+const Page = () => {
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [description, setDescription] = useState("");
@@ -92,4 +92,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
