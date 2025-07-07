@@ -3,16 +3,11 @@ import { validateTransaction } from "@/lib/validations/Transaction";
 import { Transaction } from "@/models/transaction.model";  
 import { NextRequest, NextResponse } from "next/server";
 
-interface RouteParams {
-    params: {
-        id: string
-    }
-}
 
 
-export async function DELETE(req: NextRequest, { params } : RouteParams) {
+export async function DELETE(req: NextRequest, context  : {params: { id: string }}) {
     try { 
-        const { id } = params; 
+        const { id } = context.params; 
         
         await Transaction.findByIdAndDelete(id);
         return NextResponse.json({message: "Transaction deleted succssfully"}, {status: 200})
@@ -41,9 +36,9 @@ export async function PATCH(req: NextRequest, {params}: {params: {id: string}}) 
     }
 }
 
-export async function GET(req: NextRequest, { params }: RouteParams) {
+export async function GET(req: NextRequest, context : { params: {id: string} }) {
     try { 
-        const { id } = params; 
+        const { id } = context.params; 
         
         const transaction = await Transaction.findById(id);
         return NextResponse.json(transaction, {status: 200})
