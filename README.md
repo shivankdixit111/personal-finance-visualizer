@@ -83,9 +83,9 @@ DB_URI=mongodb+srv://dshivank630:xHmJPMQ3wF0qgsNv@cluster0.hgxaeec.mongodb.net/?
 
 ```bash
 npm run dev
+```
 
 App will be running at: http://localhost:3000
-```
 
 ## 🧠 Learnings & Goals
 Practiced full-stack architecture with Next.js App Router
