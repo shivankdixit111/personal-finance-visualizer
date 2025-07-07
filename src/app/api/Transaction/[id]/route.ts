@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 
-export async function DELETE(req: NextRequest, context  : {params: { id: string }}) {
+export async function DELETE(req: NextRequest, { params } : {params: { id: string }}) {
     try { 
-        const { id } = context.params; 
+        const { id } = params; 
         
         await Transaction.findByIdAndDelete(id);
         return NextResponse.json({message: "Transaction deleted succssfully"}, {status: 200})
@@ -18,7 +18,7 @@ export async function DELETE(req: NextRequest, context  : {params: { id: string 
 }
 
 
-export async function PATCH(req: NextRequest, {params}: {params: {id: string}}) {
+export async function PATCH(req: NextRequest, {params}: any) {
     try {
       await connectToDB();
       const {id} = params;
@@ -36,9 +36,9 @@ export async function PATCH(req: NextRequest, {params}: {params: {id: string}}) 
     }
 }
 
-export async function GET(req: NextRequest, context : { params: {id: string} }) {
+export async function GET(req: NextRequest, { params }: any) {
     try { 
-        const { id } = context.params; 
+        const { id } = params; 
         
         const transaction = await Transaction.findById(id);
         return NextResponse.json(transaction, {status: 200})
