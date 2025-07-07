@@ -61,26 +61,31 @@ src/
 
 ### 1️⃣ Clone the repo
 
+```bash
 git clone https://github.com/your-username/personal-finance-visualizer.git
 cd personal-finance-visualizer
 
 
 ## Install dependencies 
 
+```bash
 npm install
 
 
 ## Add Environment Variables
 Create a .env.local file in the root and include:
 
+```bash
 DB_URI=mongodb+srv://dshivank630:xHmJPMQ3wF0qgsNv@cluster0.hgxaeec.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
  
 
 ## Run the development server 
+
+```bash
 npm run dev
 
 App will be running at: http://localhost:3000
-
+```
 
 ## 🧠 Learnings & Goals
 Practiced full-stack architecture with Next.js App Router
@@ -98,7 +103,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## ✨ Author
 Shivank Dixit
 
-💼 LinkedIn
+💼 LinkedIn : https://www.linkedin.com/in/shivank-dixit-43170024a/
 
-🚀 GitHub
+🚀 GitHub : https://github.com/shivankdixit111
 
