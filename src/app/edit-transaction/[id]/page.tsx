@@ -20,7 +20,7 @@ type transactionType =  {
     description: string, 
 }
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const { id } = useParams(); 
   const [amount, setAmount] = useState<number | undefined>(undefined);
@@ -129,4 +129,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

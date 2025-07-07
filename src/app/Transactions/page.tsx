@@ -9,18 +9,9 @@ import Loader from '@/components/Loader'
 import { useRouter } from 'next/navigation' 
 
 
-type Transaction = {
-  _id: string
-  amount: number
-  description: string
-  category: string
-  date: string
-}
-
 export default function TransactionListDemo() {
   const router = useRouter();
-  const { transactions, setRefreshTransaction, setLoading, loading, totalPages, page, setPage } = useTransactionData();
-  const pageNumbers = Array.from({length: totalPages}, (_, i)=> i+1); 
+  const { transactions, setRefreshTransaction, setLoading, loading, totalPages, page, setPage } = useTransactionData(); 
 
   if(loading) {
     return <Loader />
@@ -110,7 +101,7 @@ export default function TransactionListDemo() {
                     (<span>...</span>)
                     : 
                     (
-                        <button className={`h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 ${page==b ? "bg-gray-600" : ""}`} key={idx} onClick={()=> setPage(Number(b))}>
+                        <button  className={`h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 ${page==b ? "bg-gray-600" : ""}`} key={idx} onClick={()=> setPage(Number(b))}>
                             {b}
                         </button>
                     )

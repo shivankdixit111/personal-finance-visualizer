@@ -7,7 +7,7 @@ const years = ["2020", "2021", "2022", "2023", "2024", "2025"];
 const monthMap = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
-const page = () => {
+const Page = () => {
   const [year, setYear] = useState("")
   const [monthyExpenses, setMonthlyExpenses] = useState([]);
   const fullMonth:{month:string, value:number}[] = [];
@@ -69,4 +69,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

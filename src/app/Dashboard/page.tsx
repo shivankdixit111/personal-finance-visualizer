@@ -23,17 +23,11 @@ type dashboardDataType = {
 }
 
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const years = ["2020", "2021", "2022", "2023", "2024", "2025"];
 
-const page = () => {
-  const { transactions, loading, setLoading } = useTransactionData();
+const Page = () => {
+  const { loading, setLoading } = useTransactionData();
   const [year, setYear] = useState("")
   const [dashboardData, setDashboardData] = useState<Array<dashboardDataType>>([]);
   const [mostRecentTransactions, setMostRecentTransactions] = useState<Array<transactionType>>([]);
@@ -135,7 +129,7 @@ const page = () => {
                 <h1 className='text-lg text-gray-600 text-center mb-6'>Most Recent Transaction</h1>
                 {
                     mostRecentTransactions.map((m,idx)=> (
-                        <div className='flex justify-between p-4 border-b-2 border-b-black'>
+                        <div key={idx} className='flex justify-between p-4 border-b-2 border-b-black'>
                             <div>
                                 <h4 className='text-md'>{m.description}</h4>
                                 <Badge variant='outline' className='font-bold'>{m.category}</Badge>
@@ -150,4 +144,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
