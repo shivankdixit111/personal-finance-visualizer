@@ -27,7 +27,7 @@ const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const years = ["2020", "2021", "2022", "2023", "2024", "2025"];
 
 const Page = () => {
-  const { loading, setLoading } = useTransactionData();
+  const { loading, setLoading} = useTransactionData();
   const [year, setYear] = useState("")
   const [dashboardData, setDashboardData] = useState<Array<dashboardDataType>>([]);
   const [mostRecentTransactions, setMostRecentTransactions] = useState<Array<transactionType>>([]);
@@ -45,9 +45,9 @@ const Page = () => {
              setDashboardData(d.dashboardData);
              setMostRecentTransactions(d.mostRecentTransactions);
           }
+         setLoading(false)
       }
       getDashboardData();
-      setLoading(false)
     },[year])
 
     if(loading) {
