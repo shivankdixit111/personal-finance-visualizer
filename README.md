@@ -74,11 +74,14 @@ npm install
 
 
 ## Add Environment Variables
+
 Create a .env.local file in the root and include:
 
 ```bash
 DB_URI=mongodb+srv://dshivank630:xHmJPMQ3wF0qgsNv@cluster0.hgxaeec.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
+🛡️ Make sure not to commit your .env.local to GitHub.
+
 
 ## Run the development server 
 
@@ -89,8 +92,8 @@ npm run dev
 App will be running at: http://localhost:3000
 
 
-
 ## 🧠 Learnings & Goals
+
 ✅ Practiced full-stack architecture with Next.js App Router
 
 📊 Implemented MongoDB aggregation for powerful dashboard analytics
@@ -102,10 +105,8 @@ App will be running at: http://localhost:3000
 💡 Gained deeper understanding of API routes, global state, and data filtering by year
 
 
-
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
-
 
 
 ## ✨ Author
