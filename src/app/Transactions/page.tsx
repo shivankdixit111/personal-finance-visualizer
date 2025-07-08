@@ -92,7 +92,7 @@ export default function Page() {
         }
         {/* pagination  */}
         <div className='flex items-center justify-center gap-2'>
-            <button className='h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 flex items-center justify-center' onClick={()=> {setLoading(true), setPage(prev=> Math.max(1,prev-1))}}>
+            <button className='h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 flex items-center justify-center' onClick={()=> {setLoading(true); setPage(prev=> Math.max(1,prev-1))}}>
                <ChevronLeft />
             </button>
             {
@@ -101,13 +101,13 @@ export default function Page() {
                     (<span key={idx}>...</span>)
                     : 
                     (
-                        <button  className={`h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 ${page==b ? "bg-gray-600" : ""}`} key={idx} onClick={()=> {setLoading(true), setPage(Number(b))}}>
+                        <button  className={`h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 ${page==b ? "bg-gray-600" : ""}`} key={idx} onClick={()=> {setLoading(true); setPage(Number(b))}}>
                             {b}
                         </button>
                     )
                 ))
             }
-            <button className='h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 flex items-center justify-center' onClick={()=> {setLoading(true), setPage(prev=> Math.min(totalPages,prev+1))}}>
+            <button className='h-10 w-10 cursor-pointer transition rounded-full bg-black text-white hover:bg-gray-600 flex items-center justify-center' onClick={()=> {setLoading(true); setPage(prev=> Math.min(totalPages,prev+1))}}>
                <ChevronRight />
             </button>
         </div>
